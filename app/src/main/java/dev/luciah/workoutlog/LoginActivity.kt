@@ -17,7 +17,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         btnLogin.setOnClickListener {
             validateLogin()
-
         }
         setContentView(R.layout.activity_login)
 
@@ -31,16 +30,16 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+    fun validateLogin(){
+      var email = etEmail.text.toString()
+      var password = etPassword.text.toString()
+      if (email.isBlank()){
+          tilEmail.error =getString(R.string.email_string)
+      }
+        if (password.isBlank()){
+            tilPassword.error =getString(R.string.password_string)
+        }
 
-    fun validateLogin() {
-        var email = etEmail.text.toString()
-        var password = etPassword.text.toString()
-        if (email.isBlank()) {
-            tilEmail.error = getString(R.string.email_string)
-        }
-        if (password.isBlank()) {
-            tilPassword.error = getString(R.string.password_string)
-        }
 
     }
 }
